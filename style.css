@@ -140,35 +140,35 @@ body {
     grid-template-columns: 1fr;
   }
 }
-.plot {
+.plot2 {
   padding: 20px 0;
 }
 
-.plot img {
+.plot2 img {
   max-width: 100%;
   height: auto;
   display: block;
   border: 1px solid #ddd;
 }
 
-.plot figcaption {
+.plot2 figcaption {
   margin-top: 10px;
   line-height: 1.4;
 }
 /* ===== Gallery Image Fix ===== */
 
-.plot {
+.plot2 {
   max-width: 800px;
   margin: 0 auto;
 }
 
-.plot img {
+.plot2 img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.plot figcaption {
+.plot2 figcaption {
   text-align: center;
   margin-top: 12px;
 }
