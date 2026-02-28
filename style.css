@@ -1,1 +1,142 @@
+* { box-sizing: border-box; }
 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* 1) Header layout */
+.header {
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, nav right */
+  gap: 16px;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+.nav a {
+  margin-right: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav a:last-child {
+  margin-right: 0;
+}
+
+/* 2) Container */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 16px; /* horizontal padding */
+}
+
+/* 3) Hero section */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0; /* container already has side padding */
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-card {
+  width: 240px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  margin-left: auto; /* pushes card to the right on desktop */
+}
+
+/* 4) Grid section breakpoints */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* desktop default */
+  gap: 12px;
+  padding: 20px 0; /* container handles sides */
+}
+
+.card {
+  border: 1px solid #ddd;
+  padding: 18px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border: 1px solid black;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+/* 5) Hover styles */
+.btn:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.footer {
+  padding: 16px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+/* Tablet: 601px to 900px => 2 columns */
+@media (max-width: 900px) and (min-width: 601px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 0px to 600px */
+@media (max-width: 600px) {
+  /* Header: stacked + centered nav */
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column; /* stacked */
+    align-items: center;    /* centered */
+    gap: 8px;
+  }
+
+  .nav a {
+    margin-right: 0;
+  }
+
+  /* Hero stacks vertically */
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-card {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* Grid becomes 1 column */
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
